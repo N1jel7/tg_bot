@@ -77,16 +77,4 @@ def get_user_photo(message):
     a = ['Вау, говно, а не фото!', 'Классное фото, мне понравилось!', 'Ну даже не знаю, скорее всего говно']
     bot.send_message(message.chat.id, (random.choice(a)))
 
-@bot.message_handler(content_types=['text'])
-def get_user_text(message):
-    else message.text == "Hello":
-        bot.send_message(message.chat.id, "И тебе привет", parse_mode='html')
-    elif message.text == "ID":
-        bot.send_message(message.chat.id, f"Твой ID: {message.from_user.id}",  parse_mode='html')
-    elif message.text == "Photo":
-        photo = open('icon.png', 'rb')
-        bot.send_photo(message.chat.id, photo)
-    else:
-        bot.send_message(message.chat.id, "Я твоё не понимать, пиши осмысленные команды")
-
 bot.polling(none_stop=True)
